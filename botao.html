@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botão</title>
+    <style>
+        #botao {
+            position: absolute;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <button id="botao">Clique aqui!</button>
+
+    <script>
+        const botao = document.getElementById('botao');
+
+        botao.addEventListener('click', () => {
+            const larguraTela = window.innerWidth;
+            const alturaTela = window.innerHeight;
+
+            const novaPosicaoX = Math.random() * (larguraTela - botao.offsetWidth);
+            const novaPosicaoY = Math.random() * (alturaTela - botao.offsetHeight);
+
+            botao.style.left = `${novaPosicaoX}px`;
+            botao.style.top = `${novaPosicaoY}px`;
+        });
+    </script>
+</body>
+</html>
